@@ -1,0 +1,4 @@
+D:/_Development/CMake/CMakeTemplate/App/bin/mingw/app-0.0.1.exe
+D:/_Development/CMake/CMakeTemplate/App/bin/mingw/libsubdir1-0.0.1.dll.a
+D:/_Development/CMake/CMakeTemplate/App/bin/mingw/libsubdir1-0.0.1.dll
+D:/_Development/CMake/CMakeTemplate/App/bin/mingw/libsubdir2-0.0.2.a
