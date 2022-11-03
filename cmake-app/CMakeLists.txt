@@ -82,6 +82,7 @@ if (Doxygen_FOUND)
     message(STATUS "Doxygen documentation will be generated in ${MYLIB_DOXYGEN_LANGUAGE}")
     configure_file(doc/Doxyfile.in doc/Doxyfile)
     add_custom_target(doc COMMAND ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_BINARY_DIR}/doc)
+	#add_custom_target(doc COMMAND ${DOXYGEN_EXECUTABLE} ${DIR_DOC}/Doxyfile.in)
 	print_vars(DOXYGEN_EXECUTABLE CMAKE_CURRENT_BINARY_DIR)
 endif ()
 
