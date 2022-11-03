@@ -4,6 +4,8 @@ cmake_minimum_required(VERSION 3.19)
 #=== Includes ===="
 include(cmake/functions.cmake)
 
+print_system_vars()
+
 
 # === Configuration ===
 set(APP_NAME			"CMakeTemplate")
@@ -44,7 +46,7 @@ print_vars(DIR_SRC DIR_BUILD DIR_IMPORT DIR_EXPORT DIR_TESTS DIR_BIN TEST APP_OS
 
 
 # === CMake definitions ===="
-#set(CMAKE_INSTALL_PREFIX "${CMAKE_CURRENT_SOURCE_DIR}/bin")
+set(CMAKE_INSTALL_PREFIX ${DIR_BIN})
 
 
 # === Application ===="
@@ -64,7 +66,7 @@ add_subdirectory(src)
 print_vars(CMAKE_INSTALL_PREFIX)
 
 	
-set(APP_HOST "new")	
+set(APP_HOST "unknown")	
 if(${MINGW})
 	set(APP_HOST "mingw")
 elseif(${MSVC})
@@ -81,8 +83,7 @@ if (Doxygen_FOUND)
     endif()
     message(STATUS "Doxygen documentation will be generated in ${MYLIB_DOXYGEN_LANGUAGE}")
     configure_file(doc/Doxyfile.in doc/Doxyfile)
-    add_custom_target(doc COMMAND ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_BINARY_DIR}/doc)
-	#add_custom_target(doc COMMAND ${DOXYGEN_EXECUTABLE} ${DIR_DOC}/Doxyfile.in)
+    add_custom_target(doc ALL COMMAND ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_BINARY_DIR}/doc/Doxyfile)
 	print_vars(DOXYGEN_EXECUTABLE CMAKE_CURRENT_BINARY_DIR)
 endif ()
 
@@ -90,7 +91,11 @@ endif ()
 # === Testing ===="
 add_subdirectory(tests)
 
-#install(TARGETS ${PROJECT_NAME} DESTINATION ${APP_HOST})
-#install(TARGETS subdir1 DESTINATION ${APP_HOST})
-#install(TARGETS subdir2 DESTINATION ${APP_HOST})
+install(TARGETS app DESTINATION ${APP_HOST})
+install(TARGETS subdir1 DESTINATION	${APP_HOST})
+install(TARGETS subdir2 DESTINATION ${APP_HOST})
+install(TARGETS test_case DESTINATION ${APP_HOST}/test)
+
+
+
 
