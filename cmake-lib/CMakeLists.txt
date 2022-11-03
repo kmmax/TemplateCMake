@@ -76,6 +76,7 @@ install(TARGETS cmake-lib DESTINATION ${APP_HOST})
 install(TARGETS subdir1 DESTINATION	${APP_HOST})
 install(TARGETS subdir2 DESTINATION ${APP_HOST})
 install(TARGETS test_case DESTINATION ${APP_HOST}/test)
+install(TARGETS example DESTINATION ${APP_HOST})
 
 
 
