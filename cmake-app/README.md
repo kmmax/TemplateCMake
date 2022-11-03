@@ -13,3 +13,7 @@ git clone https://github.com/google/googletest.git && \
 mkdir $ROOT/build && \
 cd $ROOT/build
 ```
+```bash
+cmake ..
+cmake --build .
+```
