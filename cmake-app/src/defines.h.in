@@ -1,0 +1,3 @@
+#define APP_VAR1 @APP_VAR1@
+#define APP_VAR2 @APP_VAR2@
+#define APP_VAR3 "@APP_VAR3@"
