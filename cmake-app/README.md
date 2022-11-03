@@ -5,6 +5,7 @@ Template of CMake (>=v3.19) C++ library project
 Includes:
 + boost
 + gtest
++ doxygen
 
 ```bash
 ROOT=$PWD && \
